@@ -1,0 +1,37 @@
+{% extends 'student_details/base.html' %}
+
+{% block content %}
+    <div class="card mt-4">
+        <div class="card-header font-weight-bold bg-secondary text-white">
+            {{student.name}}
+            <span class="float-right ml-3 ">
+                <a href="{% url 'student-delete' student.id %}" class="text-danger" title="Delete Student"><i class="fas fa-trash"></i></a>
+            </span>
+            <span class="float-right ">
+                <a href="{% url 'student-update' student.id %}" class="text-warning" title="Edit Student"><i class="fas fa-user-edit"></i></a>
+            </span>
+
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Father Name: </strong> {{student.father_name}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Mother Name: </strong> {{student.mother_name}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Phone Number: </strong> {{student.phone}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Education: </strong> {{student.class_name}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Field: </strong> {{student.course_enroll}}
+                </li>
+
+
+              </ul>
+        </div>
+    </div>
+{% endblock content %}
